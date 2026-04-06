@@ -36,18 +36,29 @@ export default function TrendChart() {
   );
 
   return (
-    <div className="bg-white mt-3 py-4 rounded-2xl shadow-md">
-      <h3 className="font-semibold mb-4">Monthly Expense Trend</h3>
-      <ResponsiveContainer width="100%" height={300}>
+    <div className="space-y-3">
   
-      <LineChart width={500} height={300} data={monthlyData}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="month" />
-        <YAxis />
-        <Tooltip />
-        <Line type="monotone" dataKey="amount" />
-      </LineChart>
+      <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        Monthly Expense Trend
+      </h3>
+  
+      <div className="w-full h-64">
+        <ResponsiveContainer>
+          <LineChart data={monthlyData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="month" stroke="#9ca3af" />
+            <YAxis stroke="#9ca3af" />
+            <Tooltip />
+            <Line
+              type="monotone"
+              dataKey="amount"
+              stroke="#60a5fa"
+              strokeWidth={2}
+            />
+          </LineChart>
         </ResponsiveContainer>
+      </div>
+  
     </div>
   );
 }

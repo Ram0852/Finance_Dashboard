@@ -36,46 +36,78 @@ export default function Dashboard() {
         )
       : { name: "-", value: 0 };
 
-  return (
-    <div className="space-y-6">
-
-      {/* Title */}
-      <h2 className="text-2xl font-bold">Dashboard</h2>
-
-      {/* Summary Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-        <div className="bg-white p-4 rounded-2xl shadow">
-          <h3 className="text-gray-500">Balance</h3>
-          <p className="text-xl font-semibold">₹{balance}</p>
+      return (
+        <div className="space-y-6">
+      
+          {/* Title */}
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">
+            Dashboard
+          </h2>
+      
+          {/* Summary Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      
+            {/* Balance */}
+            <div className="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow hover:shadow-md transition">
+              <h3 className="text-sm text-gray-500 dark:text-gray-400">Balance</h3>
+              <p className="text-2xl font-semibold text-gray-900 dark:text-white">
+                ₹{balance}
+              </p>
+            </div>
+      
+            {/* Income */}
+            <div className="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow hover:shadow-md transition">
+              <h3 className="text-sm text-gray-500 dark:text-gray-400">Income</h3>
+              <p className="text-2xl font-semibold text-green-600">
+                ₹{income}
+              </p>
+            </div>
+      
+            {/* Expense */}
+            <div className="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow hover:shadow-md transition">
+              <h3 className="text-sm text-gray-500 dark:text-gray-400">Expense</h3>
+              <p className="text-2xl font-semibold text-red-500">
+                ₹{expense}
+              </p>
+            </div>
+      
+          </div>
+      
+          {/* Charts Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      
+            <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-md">
+              <CategoryChart />
+            </div>
+      
+            <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-md">
+              <TrendChart />
+            </div>
+      
+          </div>
+      
+          {/* Insights */}
+          <div className="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow">
+            <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+              Insights
+            </h3>
+      
+            <p className="text-gray-600 dark:text-gray-400">
+              Highest spending:
+              <span className="ml-1 font-medium text-gray-900 dark:text-white">
+                {highestCategory.name}
+              </span>
+              {" "} (₹{highestCategory.value})
+            </p>
+      
+            {/* Extra insight (small upgrade) */}
+            <p className="text-xs text-gray-400 mt-2">
+              {expense > income
+                ? "You are spending more than you earn."
+                : "Your spending is under control."}
+            </p>
+          </div>
+      
         </div>
-
-        <div className="bg-white p-4 rounded-2xl shadow">
-          <h3 className="text-gray-500">Income</h3>
-          <p className="text-xl font-semibold text-green-600">₹{income}</p>
-        </div>
-
-        <div className="bg-white p-4 rounded-2xl shadow">
-          <h3 className="text-gray-500">Expense</h3>
-          <p className="text-xl font-semibold text-red-600">₹{expense}</p>
-        </div>
-
-      </div>
-
-      {/* Chart Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-  <CategoryChart />
-  <TrendChart />
-</div>
-
-      {/* Insight Section */}
-      <div className="bg-white p-4 rounded-2xl shadow">
-        <h3 className="font-semibold mb-2">Insights</h3>
-        <p className="text-gray-600">
-          Highest spending: <span className="font-medium">{highestCategory.name}</span> (₹{highestCategory.value})
-        </p>
-      </div>
-
-    </div>
-  );
+      );
 }

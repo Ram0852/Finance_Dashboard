@@ -26,35 +26,67 @@ export default function AddTransaction() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-4 rounded-xl shadow mb-4">
-      <h3 className="font-bold mb-2">Add Transaction</h3>
-
-      <input
-        type="number"
-        placeholder="Amount"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
-        className="border p-2 mr-2"
-        required
-      />
-
-      <select value={type} onChange={(e) => setType(e.target.value)} className="border p-2 mr-2 rounded-lg">
-        <option value="expense" className="rounded-md">Expense</option>
-        <option value="income">Income</option>
-      </select>
-
-      <input
-        type="text"
-        placeholder="Category"
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
-        className="border p-2 mr-2"
-        required
-      />
-
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-lg">
-        Add
-      </button>
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow space-y-4"
+    >
+      <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        Add Transaction
+      </h3>
+  
+      {/* Inputs */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+  
+        {/* Amount */}
+        <input
+          type="number"
+          placeholder="Amount"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          className="border border-gray-300 dark:border-gray-600 
+                     p-2 rounded-md text-sm
+                     bg-white dark:bg-gray-700 dark:text-white
+                     focus:outline-none"
+          required
+        />
+  
+        {/* Type */}
+        <select
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+          className="border border-gray-300 dark:border-gray-600 
+                     p-2 rounded-md text-sm
+                     bg-white dark:bg-gray-700 dark:text-white
+                     focus:outline-none"
+        >
+          <option value="expense">Expense</option>
+          <option value="income">Income</option>
+        </select>
+  
+        {/* Category */}
+        <input
+          type="text"
+          placeholder="Category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="border border-gray-300 dark:border-gray-600 
+                     p-2 rounded-md text-sm
+                     bg-white dark:bg-gray-700 dark:text-white
+                     focus:outline-none"
+          required
+        />
+  
+        {/* Button */}
+        <button
+          type="submit"
+          className="bg-gray-900 text-white text-sm rounded-md 
+                     hover:bg-black transition 
+                     dark:bg-white dark:text-black"
+        >
+          Add
+        </button>
+  
+      </div>
     </form>
   );
 }
