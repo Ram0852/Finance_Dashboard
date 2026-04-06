@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../../context/AppContext";
 import AddTransaction from "./AddTransaction";
+import { ArrowUpRight, ArrowDownRight } from "lucide-react";
 
 export default function TransactionList() {
   const { transactions, role } = useContext(AppContext);
@@ -103,12 +104,17 @@ export default function TransactionList() {
                 </div>
     
                 <p
-                  className={`font-semibold ${
+                  className={`font-semibold flex items-center ${
                     t.type === "income"
                       ? "text-green-600"
                       : "text-red-500"
                   }`}
                 >
+                  {t.type === "income" ? (
+                    <ArrowUpRight size={20} className="mr-1" />
+                  ) : (
+                    <ArrowDownRight size={20} className="mr-1" />
+                  )}
                   ₹{t.amount}
                 </p>
               </div>
