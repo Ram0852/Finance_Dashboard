@@ -80,7 +80,7 @@ export default function AddTransaction() {
         <button
           type="submit"
           className="bg-gray-900 text-white text-sm rounded-md 
-                     hover:bg-black transition 
+                     hover:bg-black transition py-3
                      dark:bg-white dark:text-black"
         >
           Add
