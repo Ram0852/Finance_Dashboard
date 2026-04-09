@@ -28,13 +28,13 @@ export default function CategoryChart() {
   // 🎨 Better color palette (works for light + dark)
   const COLORS = ["#f87171", "#60a5fa", "#34d399", "#fbbf24"];
   return (
-    <div className="space-y-3">
+    <div className="space-y-3 " >
 
-      <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+      <h3 className="text-md font-semibold text-gray-700 dark:text-gray-300">
         Spending by Category
       </h3>
 
-      <div className="w-full h-64">
+      <div className="w-full h-64 ">
         <ResponsiveContainer>
           <PieChart>
             <Pie

@@ -38,7 +38,7 @@ export default function TrendChart() {
   return (
     <div className="space-y-3">
   
-      <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+      <h3 className="text-md font-semibold text-gray-700 dark:text-gray-300">
         Monthly Expense Trend
       </h3>
   

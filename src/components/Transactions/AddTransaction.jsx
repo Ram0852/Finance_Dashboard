@@ -39,16 +39,18 @@ export default function AddTransaction() {
   
         {/* Amount */}
         <input
-          type="number"
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]*"
           placeholder="Amount"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           className="border border-gray-300 dark:border-gray-600 
-                     p-2 rounded-md text-sm
-                     bg-white dark:bg-gray-700 dark:text-white
-                     focus:outline-none"
+                    p-2 rounded-md text-sm
+                    bg-white dark:bg-gray-700 dark:text-white
+                    focus:outline-none"
           required
-        />
+      />
   
         {/* Type */}
         <select

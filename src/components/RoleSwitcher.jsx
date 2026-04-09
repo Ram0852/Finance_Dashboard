@@ -5,12 +5,12 @@ export default function RoleSwitcher() {
   const { role, setRole, user, darkMode, setDarkMode } = useContext(AppContext);
 
   return (
-    <div className="flex items-center justify-between w-full">
+    <div className="flex items-center justify-between w-full ">
 
       {/* Greeting */}
-      <div className="text-sm text-gray-600 dark:text-gray-300">
+      <div className="text-md text-gray-600 dark:text-gray-300">
         {role === "admin" ? (
-          <span>Welcome, <span className="font-medium text-gray-800 dark:text-white">{user}</span></span>
+           <span className=" text-gray-800 dark:text-white">Viewing as Admin</span>
         ) : (
           <span>Viewing as Guest</span>
         )}
@@ -23,12 +23,12 @@ export default function RoleSwitcher() {
         <select
           value={role}
           onChange={(e) => setRole(e.target.value)}
-          className="px-3 py-1.5 rounded-md border border-gray-300 
+          className="px-3 py-1.5 rounded-lg border border-gray-300 
                      bg-white text-sm 
                      dark:bg-gray-800 dark:text-white dark:border-gray-600
                      focus:outline-none"
         >
-          <option value="viewer">Viewer</option>
+          <option value="viewer" className="py-3" >Viewer</option>
           <option value="admin">Admin</option>
         </select>
 
