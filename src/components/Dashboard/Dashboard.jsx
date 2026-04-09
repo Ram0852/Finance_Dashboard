@@ -101,11 +101,12 @@ export default function Dashboard() {
             </p>
       
             {/* Extra insight (small upgrade) */}
-            <p className="text-xs text-gray-400 mt-2">
+            <span className="text-xs text-gray-400 mt-2">
               {expense > income
-                ? "You are spending more than you earn."
-                : "Your spending is under control."}
-            </p>
+                ? <p>You are spending<span className="text-red-500"> more</span> than you earn.</p>
+                : expense == income ? <p>You are spending <span className="text-orange-500"> all</span> of your income</p> 
+                : <p>Your spending is under <span className="text-green-500"> control</span></p>}
+            </span>
           </div>
       
         </div>

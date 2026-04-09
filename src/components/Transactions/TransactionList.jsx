@@ -102,9 +102,9 @@ export default function TransactionList() {
             >
               {/* Left */}
               <div>
-                <p className="font-medium text-gray-800 dark:text-white">
-                  {t.category}
-                </p>
+              <p className="font-medium text-gray-800 dark:text-white">
+  {t.category.charAt(0).toUpperCase() + t.category.slice(1)}
+</p>
                 <p className="text-xs text-gray-500 dark:text-gray-400">
                   {t.date}
                 </p>

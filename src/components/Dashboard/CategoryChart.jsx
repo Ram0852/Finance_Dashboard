@@ -1,6 +1,12 @@
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Tooltip,
+  ResponsiveContainer
+} from "recharts";
 
 export default function CategoryChart() {
   const { transactions } = useContext(AppContext);
@@ -19,8 +25,8 @@ export default function CategoryChart() {
     }, {})
   );
 
+  // 🎨 Better color palette (works for light + dark)
   const COLORS = ["#f87171", "#60a5fa", "#34d399", "#fbbf24"];
-
   return (
     <div className="space-y-3">
 
@@ -35,16 +41,27 @@ export default function CategoryChart() {
               data={categoryData}
               dataKey="value"
               nameKey="name"
-              outerRadius={120}
+              outerRadius={110}
+              stroke="none" // ❌ removes border
+              isAnimationActive={false} // optional: smoother UX
             >
               {categoryData.map((entry, index) => (
                 <Cell
                   key={index}
                   fill={COLORS[index % COLORS.length]}
+                  style={{ outline: "none" }} // ❌ removes focus box
                 />
               ))}
             </Pie>
-            <Tooltip />
+
+            <Tooltip
+              contentStyle={{
+                backgroundColor: "#1f2937",
+                border: "none",
+                borderRadius: "6px",
+                color: "#fff"
+              }}
+            />
           </PieChart>
         </ResponsiveContainer>
       </div>

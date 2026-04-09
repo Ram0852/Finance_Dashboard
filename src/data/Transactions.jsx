@@ -4,27 +4,27 @@ export const transactions = [
       date: "2026-03-01",
       amount: 5000,
       type: "income",
-      category: "salary"
+      category: "Salary"
     },
     {
       id: 2,
       date: "2026-04-02",
       amount: 200,
       type: "expense",
-      category: "food"
+      category: "Food"
     },
     {
       id: 3,
       date: "2026-03-03",
       amount: 1500,
       type: "expense",
-      category: "rent"
+      category: "Rent"
     },
     {
       id: 4,
       date: "2026-02-05",
       amount: 800,
       type: "expense",
-      category: "shopping"
+      category: "Shopping"
     }
   ];
