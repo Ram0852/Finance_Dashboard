@@ -133,7 +133,7 @@ export default function Dashboard() {
                     transition`}
       >
 
-        <h3 className="text-md font-semibold text-gray-700 dark:text-gray-300 mb-2">
+        <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">
           Insights
         </h3>
 

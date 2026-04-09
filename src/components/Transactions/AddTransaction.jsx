@@ -30,7 +30,7 @@ export default function AddTransaction() {
       onSubmit={handleSubmit}
       className="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow space-y-4"
     >
-      <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+      <h3 className="text-md font-semibold text-gray-700 dark:text-gray-300">
         Add Transaction
       </h3>
   
