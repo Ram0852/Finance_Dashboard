@@ -88,7 +88,7 @@ export default function Dashboard() {
       
           {/* Insights */}
           <div className="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow">
-            <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+            <h3 className="text-md font-semibold text-gray-700 dark:text-gray-300 mb-2">
               Insights
             </h3>
       
